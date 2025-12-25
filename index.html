@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+   <title>TikTok Creator Excellence Program</title>
+   <style>
+     * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+     }
+
+     body {
+       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+       min-height: 100vh;
+       padding: 10px 10px 0 10px;
+       position: relative;
+       overflow-x: hidden;
+     }
+
+     /* Fix for mobile browser address bar */
+     @supports (-webkit-touch-callout: none) {
+       body {
+         min-height: -webkit-fill-available;
+       }
+     }
+
+     .email-container {
+       max-width: 100%;
+       margin: 5px auto 10px auto;
+       background: #ffffff;
+       border-radius: 15px;
+       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+       overflow: hidden;
+       animation: slideUp 0.6s ease-out;
+       position: relative;
+     }
+
+     @keyframes slideUp {
+       from {
+         opacity: 0;
+         transform: translateY(20px);
+       }
+        to {
+         opacity: 1;
+         transform: translateY(0);
+       }
+     }
+
+     .verification-badge {
+       position: absolute;
+       top: 8px;
+       right: 8px;
+       background: linear-gradient(135deg, #00D4FF, #0099CC);
+       color: white;
+       padding: 4px 8px;
+       border-radius: 12px;
+       font-size: 9px;
+       font-weight: bold;
+       z-index: 10;
+       display: flex;
+       align-items: center;
+       gap: 2px;
+       animation: shimmer 2s infinite;
+       max-width: 90px;
+     }
+
+     @keyframes shimmer {
+       0%,
+       100% {
+         opacity: 1;
+       }
+       50% {
+         opacity: 0.8;
+       }
+     }
+
+     .header {
+       background: linear-gradient(135deg, #010101 0%, #2a2a2a 100%);
+       padding: 15px 10px;
+       text-align: center;
+       position: relative;
+       overflow: hidden;
+     }
+
+     .header::before {
+       content: '';
+       position: absolute;
+       top: -50%;
+       left: -50%;
+       width: 200%;
+       height: 200%;
+       background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+       transform: rotate(45deg);
+       animation: shimmer 3s infinite;
+     }
+
+     .header img {
+       width: 70px;
+       max-width: 100%;
+       filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+       animation: pulse 2s infinite;
+     }
+
+     @keyframes pulse {
+       0%,
+       100% {
+         transform: scale(1);
+       }
+       50% {
+         transform: scale(1.05);
+       }
+     }
+
+     .content {
+       padding: 15px 12px;
+       background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+     }
+
+     .title {
+       font-size: 16px;
+       font-weight: bold;
+       margin-bottom: 8px;
+       line-height: 1.2;
+       color: #333;
+       text-align: center;
+     }
+
+     .highlight {
+       background: linear-gradient(135deg, #25F4EE, #00d4cc);
+       color: #010101 !important;
+       padding: 4px 8px;
+       border-radius: 15px;
+       font-weight: bold;
+       display: inline-block;
+       box-shadow: 0 2px 8px rgba(37, 244, 238, 0.3);
+       animation: glow 2s ease-in-out infinite;
+       -webkit-text-fill-color: #010101 !important;
+       position: relative;
+       z-index: 1;
+       font-size: 12px;
+       margin: 2px 0;
+     }
+
+     @keyframes glow {
+       0%,
+       100% {
+         box-shadow: 0 2px 8px rgba(37, 244, 238, 0.3);
+       }
+       50% {
+         box-shadow: 0 2px 15px rgba(37, 244, 238, 0.6);
+       }
+     }
+
+     .content p {
+       font-size: 12px;
+       line-height: 1.3;
+       margin-bottom: 8px;
+       color: #333;
+     }
+
+     .reward-info {
+       margin-top: 12px;
+       font-size: 12px;
+       color: #333;
+       padding: 10px 12px;
+       background: linear-gradient(135deg, #fff5f5, #ffe0e0);
+       border-radius: 8px;
+       border-left: 3px solid #FE2C55;
+       line-height: 1.3;
+     }
+
+     .btn {
+       display: inline-block;
+       margin-top: 12px;
+       background: linear-gradient(135deg, #FE2C55, #e42047);
+       color: white;
+       padding: 10px 20px;
+       text-decoration: none;
+       border-radius: 20px;
+       font-weight: bold;
+       font-size: 12px;
+       transition: all 0.3s ease;
+       box-shadow: 0 2px 10px rgba(254, 44, 85, 0.3);
+       width: 100%;
+       max-width: 220px;
+       text-align: center;
+     }
+
+     .btn:hover {
+       transform: translateY(-2px);
+       box-shadow: 0 4px 12px rgba(254, 44, 85, 0.4);
+     }
+
+     .footer {
+       background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
+       padding: 12px;
+       font-size: 10px;
+       color: #777;
+       text-align: center;
+       line-height: 1.2;
+     }
+
+     ul {
+       margin: 10px 0;
+       padding-left: 15px;
+     }
+
+     ul li {
+       margin: 5px 0;
+       color: #555;
+       font-size: 11px;
+       position: relative;
+       padding-left: 5px;
+       line-height: 1.2;
+     }
+
+     .reveal-section {
+       background: linear-gradient(135deg, #ffffff, #f9f9f9);
+       color: #000;
+       padding: 15px 12px;
+       border-radius: 10px;
+       margin-top: 15px;
+       text-align: center;
+       position: relative;
+       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+       overflow: hidden;
+     }
+
+     .reveal-section::before {
+       content: '';
+       position: absolute;
+       top: -2px;
+       left: -2px;
+       right: -2px;
+       bottom: -2px;
+       background: linear-gradient(45deg, #FE2C55, #25F4EE, #FE2C55);
+       border-radius: 10px;
+       opacity: 0.3;
+       z-index: -1;
+       animation: borderRotate 3s linear infinite;
+     }
+
+     @keyframes borderRotate {
+       0% {
+         transform: rotate(0deg);
+       }
+        100% {
+         transform: rotate(360deg);
+       }
+     }
+
+     .reveal-btn, .claim-btn {
+       background: linear-gradient(135deg, #FE2C55, #e42047);
+       color: #fff;
+       padding: 10px 16px;
+       border: none;
+       border-radius: 18px;
+       font-size: 12px;
+       font-weight: bold;
+       cursor: pointer;
+       margin: 10px auto;
+       transition: all 0.3s ease;
+       box-shadow: 0 2px 10px rgba(254, 44, 85, 0.3);
+       position: relative;
+       overflow: hidden;
+       display: block;
+       width: 100%;
+       max-width: 240px;
+     }
+
+     .claim-btn {
+       background: linear-gradient(135deg, #FFD700, #FFA500);
+       color: #333;
+       box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+       display: none;
+     }
+
+     .reveal-btn::before, .claim-btn::before {
+       content: '';
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       width: 0;
+       height: 0;
+       background: rgba(255, 255, 255, 0.3);
+       border-radius: 50%;
+       transform: translate(-50%, -50%);
+       transition: width 0.6s, height 0.6s;
+     }
+
+     .reveal-btn:hover::before, .claim-btn:hover::before {
+       width: 150px;
+       height: 150px;
+     }
+
+     .reveal-btn:hover, .claim-btn:hover {
+       transform: translateY(-1px);
+       box-shadow: 0 4px 12px rgba(254, 44, 85, 0.4);
+     }
+
+     .reward-text {
+       display: none;
+       margin-top: 12px;
+       font-size: 14px;
+       font-weight: bold;
+       color: #FE2C55;
+       animation: fadeInScale 0.5s ease-out;
+       padding: 10px 12px;
+       background: linear-gradient(135deg, #fff5f5, #ffe0e0);
+       border-radius: 8px;
+       box-shadow: 0 3px 8px rgba(254, 44, 85, 0.2);
+       line-height: 1.2;
+     }
+
+     @keyframes fadeInScale {
+       from {
+         opacity: 0;
+         transform: scale(0.95);
+       }
+        to {
+         opacity: 1;
+         transform: scale(1);
+       }
+     }
+
+     .confetti {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       pointer-events: none;
+       z-index: 0;
+     }
+
+     /* Contact links styles */
+     .contact-links {
+       display: none;
+       margin-top: 12px;
+       animation: fadeInScale 0.5s ease-out;
+     }
+
+     .contact-header {
+       font-size: 12px;
+       color: #333;
+       margin-bottom: 8px;
+       font-weight: bold;
+       line-height: 1.1;
+     }
+
+     .contact-options {
+       display: flex;
+       flex-direction: column;
+       gap: 6px;
+       margin-top: 8px;
+     }
+
+     .contact-option {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       gap: 6px;
+       padding: 8px 12px;
+       background: linear-gradient(135deg, #25F4EE, #00d4cc);
+       color: white;
+       text-decoration: none;
+       border-radius: 15px;
+       font-weight: bold;
+       transition: all 0.3s ease;
+       box-shadow: 0 2px 8px rgba(37, 244, 238, 0.3);
+       font-size: 11px;
+     }
+
+     .contact-option:hover {
+       transform: translateY(-1px);
+       box-shadow: 0 3px 10px rgba(37, 244, 238, 0.4);
+       color: white;
+     }
+
+     .contact-option.telegram {
+       background: linear-gradient(135deg, #0088cc, #006699);
+       box-shadow: 0 2px 8px rgba(0, 136, 204, 0.3);
+     }
+
+     .contact-option.telegram:hover {
+       box-shadow: 0 3px 10px rgba(0, 136, 204, 0.4);
+     }
+
+     .contact-option.outlook {
+       background: linear-gradient(135deg, #0072c6, #005a9e);
+       box-shadow: 0 2px 8px rgba(0, 114, 198, 0.3);
+     }
+
+     .contact-option.outlook:hover {
+       box-shadow: 0 3px 10px rgba(0, 114, 198, 0.4);
+     }
+
+     .contact-icon {
+       width: 14px;
+       height: 14px;
+       filter: brightness(0) invert(1);
+     }
+
+     .contact-note {
+       margin-top: 8px;
+       font-size: 10px;
+       color: #666;
+       font-style: italic;
+       line-height: 1.1;
+     }
+
+     .security-warning {
+       margin-top: 8px;
+       padding: 6px 8px;
+       background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+       border-left: 2px solid #ffc107;
+       border-radius: 5px;
+       font-size: 10px;
+       color: #856404;
+       text-align: left;
+       line-height: 1.1;
+     }
+
+     /* Social proof popups */
+     #social-proof {
+       position: fixed;
+       bottom: 5px;
+       left: 5px;
+       right: 5px;
+       background: linear-gradient(135deg, #ffffff, #f8f9fa);
+       color: #333;
+       padding: 8px 10px;
+       border-radius: 6px;
+       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+       font-size: 10px;
+       z-index: 1000;
+       transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+       border-left: 2px solid #FE2C55;
+       max-width: calc(100% - 10px);
+       margin: 0 auto;
+     }
+
+     #social-proof::before {
+       content: '🔔';
+       margin-right: 4px;
+       animation: bellRing 1s ease-in-out infinite;
+     }
+
+     #social-proof.creator-popup::before {
+       content: '⭐';
+     }
+
+     #social-proof::after {
+       content: '';
+       position: absolute;
+       top: 4px;
+       right: 4px;
+       width: 4px;
+       height: 4px;
+       background: #25F4EE;
+       border-radius: 50%;
+       animation: pulseDot 2s infinite;
+     }
+
+     @keyframes pulseDot {
+       0%,
+       100% {
+         transform: scale(1);
+         opacity: 1;
+       }
+       50% {
+         transform: scale(1.5);
+         opacity: 0.5;
+       }
+     }
+
+     @keyframes bellRing {
+       0%,
+       100% {
+         transform: rotate(0deg);
+       }
+       25% {
+         transform: rotate(10deg);
+       }
+       75% {
+         transform: rotate(-10deg);
+       }
+     }
+
+     .hidden {
+       opacity: 0;
+       transform: translateX(-100%);
+       pointer-events: none;
+     }
+
+     .visible {
+       opacity: 1;
+       transform: translateX(0);
+     }
+
+     #top-creator-popup {
+       position: fixed;
+       top: 5px;
+       left: 5px;
+       right: 5px;
+       background: linear-gradient(135deg, #FE2C55, #e42047);
+       color: white;
+       padding: 10px 12px;
+       border-radius: 8px;
+       box-shadow: 0 4px 15px rgba(254, 44, 85, 0.4);
+       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+       font-size: 11px;
+       z-index: 1001;
+       transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+       border: 1px solid #25F4EE;
+       max-width: calc(100% - 10px);
+       margin: 0 auto;
+     }
+
+     #top-creator-popup::before {
+       content: '🏆';
+       margin-right: 4px;
+       font-size: 14px;
+     }
+
+     .creator-name {
+       font-weight: bold;
+       color: #25F4EE;
+       text-shadow: 0 0 6px rgba(37, 244, 238, 0.5);
+       font-size: 11px;
+     }
+
+     .reward-amount {
+       font-size: 12px;
+       font-weight: bold;
+       margin-top: 2px;
+     }
+
+     .loading-spinner {
+       width: 14px;
+       height: 14px;
+       border: 2px solid rgba(255, 255, 255, 0.3);
+       border-top-color: white;
+       border-radius: 50%;
+       animation: spin 1s linear infinite;
+       margin-left: 4px;
+       display: none;
+       vertical-align: middle;
+     }
+
+     @keyframes spin {
+       to {
+         transform: rotate(360deg);
+       }
+     }
+
+     .legal-disclaimer {
+       margin-top: 15px;
+       padding: 10px 12px;
+       background: #f8f9fa;
+       border-radius: 6px;
+       font-size: 9px;
+       color: #666;
+       line-height: 1.2;
+     }
+
+     .security-notice {
+       background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+       padding: 8px 10px;
+       border-radius: 6px;
+       margin: 10px 0;
+       display: flex;
+       align-items: center;
+       gap: 4px;
+       font-size: 10px;
+     }
+
+     .security-notice::before {
+       content: '🔒';
+       font-size: 12px;
+       flex-shrink: 0;
+     }
+
+     .terms-link {
+       color: #666;
+       text-decoration: underline;
+       font-size: 9px;
+     }
+
+     .terms-link:hover {
+       color: #FE2C55;
+     }
+
+     /* Extra small mobile adjustments */
+     @media (max-width: 375px) {
+       body {
+         padding: 8px 8px 0 8px;
+       }
+       
+       .email-container {
+         margin: 3px auto 8px auto;
+       }
+       
+       .header {
+         padding: 12px 8px;
+       }
+       
+       .header img {
+         width: 60px;
+       }
+       
+       .content {
+         padding: 12px 10px;
+       }
+       
+       .title {
+         font-size: 14px;
+       }
+       
+       .highlight {
+         font-size: 11px;
+         padding: 3px 6px;
+       }
+       
+       .content p {
+         font-size: 11px;
+       }
+       
+       .reveal-btn, .claim-btn {
+         padding: 8px 12px;
+         font-size: 11px;
+         max-width: 200px;
+       }
+       
+       .reward-text {
+         font-size: 12px;
+         padding: 8px 10px;
+       }
+       
+       .contact-option {
+         padding: 6px 10px;
+         font-size: 10px;
+       }
+       
+       .contact-icon {
+         width: 12px;
+         height: 12px;
+       }
+     }
+
+     @media (max-height: 700px) {
+       body {
+         padding: 5px 5px 0 5px;
+       }
+       
+       .email-container {
+         margin: 2px auto 5px auto;
+       }
+       
+       .header {
+         padding: 10px 8px;
+       }
+       
+       .header img {
+         width: 55px;
+       }
+       
+       .content {
+         padding: 10px 8px;
+       }
+       
+       .reveal-section {
+         padding: 12px 10px;
+         margin-top: 10px;
+       }
+       
+       .legal-disclaimer {
+         margin-top: 10px;
+         padding: 8px 10px;
+       }
+     }
+
+     /* iPhone notch/safe area support */
+     @supports (padding: max(0px)) {
+       body {
+         padding-left: max(10px, env(safe-area-inset-left));
+         padding-right: max(10px, env(safe-area-inset-right));
+         padding-top: max(10px, env(safe-area-inset-top));
+         padding-bottom: max(10px, env(safe-area-inset-bottom));
+       }
+     }
+
+     .title-part {
+       background: linear-gradient(135deg, #FE2C55, #ff4d7d);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       background-clip: text;
+     }
+
+     .shopper-badge {
+       display: inline-block;
+       background: linear-gradient(135deg, #FFD700, #FFA500);
+       color: #fff;
+       padding: 2px 5px;
+       border-radius: 8px;
+       font-size: 8px;
+       font-weight: bold;
+       margin-left: 3px;
+       animation: shimmer 2s infinite;
+       margin-top: 2px;
+     }
+
+     .mega-reward {
+       background: linear-gradient(135deg, #FFD700, #FF6B6B);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       background-clip: text;
+       font-size: 16px;
+       font-weight: bold;
+       text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+     }
+
+     /* Hide the popups on very small screens */
+     @media (max-height: 600px) {
+       #social-proof,
+       #top-creator-popup {
+         display: none !important;
+       }
+     }
+   </style>
+ </head>
+
+ <body>
+   <div class="email-container">
+     <div class="verification-badge">
+       ✅ Verified
+     </div>
+
+     <div class="header">
+       <img src="https://logos-world.net/wp-content/uploads/2020/04/TikTok-Logo.png" alt="TikTok Logo" />
+     </div>
+
+     <div class="content">
+       <p class="title">
+         <span class="title-part">🎉 Congratulations!</span><br>
+         <span class="highlight">TikTok Creator Program</span>
+         <span class="shopper-badge">+ Shoppers</span>
+       </p>
+
+       <p>Dear <strong>diane</strong>,</p>
+
+       <p>You've been selected for the <strong>Creator Excellence Program</strong>.</p>
+
+       <div class="security-notice">
+         Official TikTok communication.
+       </div>
+
+       <ul>
+         <li>✅ Verified active creator</li>
+         <li>✅ Strong engagement</li>
+         <li>✅ Positive contribution</li>
+         <li>✅ TikTok Shop</li>
+         <li>✅ Guidelines compliant</li>
+       </ul>
+
+       <div class="reward-info">
+         🎁 <strong>Benefits:</strong> Exclusive rewards and monetary recognition.
+       </div>
+
+       <!-- Reveal Section -->
+       <div class="reveal-section">
+         <canvas class="confetti"></canvas>
+         
+         <!-- View Reward Button -->
+         <button class="reveal-btn" onclick="revealReward()" id="viewRewardBtn">
+           View Reward <span class="loading-spinner" id="viewSpinner"></span>
+         </button>
+         
+         <!-- Reward Amount -->
+         <div class="reward-text" id="rewardText">
+           💰 Qualified for
+           <strong><span class="mega-reward">$20,000</span> Grant</strong><br>
+           <small>Available now</small>
+         </div>
+         
+         <!-- Claim Reward Button -->
+         <button class="claim-btn" onclick="revealContactLinks()" id="claimRewardBtn">
+           Claim Reward <span class="loading-spinner" id="claimSpinner"></span>
+         </button>
+         
+         <!-- Contact Links Section -->
+         <div class="contact-links" id="contactLinks">
+           <p class="contact-header">Claim your $20,000:</p>
+           
+           <div class="contact-options">
+             <a href="https://t.me/titokcreatorsreward" class="contact-option telegram" target="_blank">
+               <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" class="contact-icon">
+               Telegram
+             </a>
+             
+             <a href="mailto:tiktokrewardspartners@outlook.com?subject=Claim%20Grant&body=Hello%2C%0A%0AI%20received%20notification%20about%20the%20%2420%2C000%20Creator%20Grant.%0A%0APlease%20let%20me%20know%20how%20to%20claim.%0A%0AName%3A%20diane%0AID%3A%20CEP-2024-78492" 
+                class="contact-option outlook">
+               <img src="https://img.icons8.com/color/96/000000/microsoft-outlook-2019--v1.png" alt="Outlook" class="contact-icon">
+               Email
+             </a>
+           </div>
+           
+           <div class="security-warning">
+             ⚠️ Contact official channels only.
+           </div>
+         </div>
+       </div>
+
+       <div class="legal-disclaimer">
+         <strong>Important:</strong><br>
+         • TikTok Program<br>
+         • 30 days valid<br>
+         • Terms apply<br>
+         <a href="#" class="terms-link" onclick="showTerms(event)">Terms</a> |
+         <a href="#" class="terms-link" onclick="showPrivacy(event)">Privacy</a>
+       </div>
+
+       <p style="margin-top: 12px; font-size: 11px;">
+         <strong>📧 Contact:</strong><br>
+         <a href="mailto:tiktokrewardspartners@outlook.com"
+           style="color: #FE2C55; text-decoration: none; font-weight: bold;">creator.program@tiktok.com</a><br>
+         <small style="color: #999;">ID: CEP-2024-78492</small>
+       </p>
+     </div>
+
+     <div class="footer">
+       ©️ 2024 TikTok Inc.
+     </div>
+   </div>
+
+   <!-- Social Proof Popup -->
+   <div id="social-proof" class="popup hidden"></div>
+
+   <!-- Top Creator Popup -->
+   <div id="top-creator-popup" class="popup hidden"></div>
+
+   <script>
+     const messages = [
+       "🎉 Creator claimed",
+       "📈 Program trending",
+       "🏆 New recipient"
+     ];
+
+     const creatorMessages = [
+       { name: "Charli D'Amelio", amount: "$750K", message: "received" },
+       { name: "Khaby Lame", amount: "$1M", message: "earned" },
+       { name: "Bella Poarch", amount: "$850K", message: "awarded" }
+     ];
+
+     const popup = document.getElementById("social-proof");
+     const topCreatorPopup = document.getElementById("top-creator-popup");
+
+     function showPopup() {
+       const message = messages[Math.floor(Math.random() * messages.length)];
+       popup.textContent = message;
+       popup.classList.remove("creator-popup");
+       popup.classList.remove("hidden");
+       popup.classList.add("visible");
+
+       setTimeout(() => {
+         popup.classList.remove("visible");
+         popup.classList.add("hidden");
+       }, 2000);
+     }
+
+     function showCreatorPopup() {
+       const creator = creatorMessages[Math.floor(Math.random() * creatorMessages.length)];
+       topCreatorPopup.innerHTML = `
+         <div class="creator-name">${creator.name}</div>
+         <div>${creator.message}</div>
+         <div class="reward-amount">${creator.amount} 🎉</div>
+       `;
+              
+       topCreatorPopup.classList.remove("hidden");
+       topCreatorPopup.classList.add("visible");
+
+       setTimeout(() => {
+         topCreatorPopup.classList.remove("visible");
+         topCreatorPopup.classList.add("hidden");
+       }, 3000);
+     }
+
+     // Reduced frequency of popups
+     setInterval(showPopup, 15000);
+     setInterval(showCreatorPopup, 20000);
+
+     function revealReward() {
+       const reward = document.getElementById('rewardText');
+       const viewBtn = document.getElementById('viewRewardBtn');
+       const claimBtn = document.getElementById('claimRewardBtn');
+       
+       viewBtn.disabled = true;
+       viewBtn.innerHTML = 'Loading...';
+
+       setTimeout(() => {
+         reward.style.display = 'block';
+         launchConfetti();
+         viewBtn.style.display = 'none';
+         claimBtn.style.display = 'block';
+       }, 800);
+     }
+
+     function revealContactLinks() {
+       const claimBtn = document.getElementById('claimRewardBtn');
+       const contactLinks = document.getElementById('contactLinks');
+       
+       claimBtn.disabled = true;
+       claimBtn.innerHTML = 'Loading...';
+
+       setTimeout(() => {
+         claimBtn.style.display = 'none';
+         contactLinks.style.display = 'block';
+         launchConfetti();
+       }, 800);
+     }
+
+     function showTerms(event) {
+       event.preventDefault();
+       const popup = document.getElementById('social-proof');
+       popup.textContent = '📋 Opening...';
+       popup.classList.add('creator-popup');
+       popup.classList.remove('hidden');
+       popup.classList.add('visible');
+              
+       setTimeout(() => {
+         popup.classList.remove('visible');
+         popup.classList.add('hidden');
+       }, 1500);
+     }
+
+     function showPrivacy(event) {
+       event.preventDefault();
+       const popup = document.getElementById('social-proof');
+       popup.textContent = '🔒 Opening...';
+       popup.classList.add('creator-popup');
+       popup.classList.remove('hidden');
+       popup.classList.add('visible');
+              
+       setTimeout(() => {
+         popup.classList.remove('visible');
+         popup.classList.add('hidden');
+       }, 1500);
+     }
+
+     function launchConfetti() {
+       const canvas = document.querySelector('.confetti');
+       if (!canvas) return;
+       
+       const confetti = canvas.getContext('2d');
+       canvas.width = canvas.offsetWidth;
+       canvas.height = canvas.offsetHeight;
+
+       const colors = ['#FE2C55', '#25F4EE', '#FFD700'];
+       let particles = Array.from({ length: 40 }, () => ({
+         x: Math.random() * canvas.width,
+         y: Math.random() * -canvas.height,
+         speed: Math.random() * 1.5 + 1,
+         radius: Math.random() * 3 + 1,
+         color: colors[Math.floor(Math.random() * colors.length)],
+         rotation: Math.random() * 360
+       }));
+
+       function draw() {
+         confetti.clearRect(0, 0, canvas.width, canvas.height);
+         for (let p of particles) {
+           confetti.save();
+           confetti.translate(p.x, p.y);
+           confetti.rotate(p.rotation * Math.PI / 180);
+           confetti.fillStyle = p.color;
+           confetti.fillRect(-p.radius/2, -p.radius/2, p.radius, p.radius);
+           confetti.restore();
+
+           p.y += p.speed;
+           if (p.y > canvas.height) {
+             p.y = -5;
+             p.x = Math.random() * canvas.width;
+           }
+         }
+         requestAnimationFrame(draw);
+       }
+
+       draw();
+
+       setTimeout(() => {
+         particles = [];
+       }, 4000);
+     }
+
+     // Add minimal timestamp
+     document.addEventListener('DOMContentLoaded', function() {
+       const timestamp = document.createElement('div');
+       timestamp.style.cssText = 'font-size: 8px; color: #999; margin-top: 3px;';
+       timestamp.innerHTML = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+       document.querySelector('.footer').appendChild(timestamp);
+       
+       // Auto-show first popup after delay
+       setTimeout(showPopup, 1000);
+     });
+   </script>
+ </body>
+</html>
